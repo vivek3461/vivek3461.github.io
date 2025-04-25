@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vivek A - Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+	  /* 🎨 Base Color Tokens */
+	  --color-white: #ffffff;
+	  --color-black: #000000;
+	  --color-gray50: #777777;
+	  --color-background: #f9f9f9;
+	  --color-primary-green: #357246;
+	  --color-accent-light: #d0ffd0;
+	  --color-dark-bg: #2f4f4f;
+	  --color-text-main: #222;
+	  --color-heading-green: #34523d;
+	  --color-shadow-dark: rgba(0, 0, 0, 0.13);
+	  --color-shadow-green1: rgba(20, 80, 20, 0.08);
+	  --color-shadow-green2: rgba(20, 80, 20, 0.06);
+	  --color-gradient-start: #f8fafc;
+	  --color-gradient-end: #e8f5e9;
+	  --color-conf-bg: #b0c0d0;
+	  --color-author-name: #369050;
+	  --color-status-text: #8e3424;
+	  --color-button-bg: #333333;
+	  --color-button-border: #555555;
+
+	  /* 🧩 Semantic Tokens */
+	  --site-bgcolor: var(--color-background);
+	  --main-textcolor: var(--color-text-main);
+
+	  --sidebar-bgcolor: var(--color-dark-bg);
+	  --sidebar-textcolor: var(--color-white);
+	  --sidebar-highlight: var(--color-accent-light);
+
+	  --profile-border: var(--color-white);
+	  --profile-shadow: var(--color-shadow-dark);
+	  --profile-bgcolor: var(--color-accent-light);
+	  
+	  --main-bgcolor: var(--color-white);
+	  --main-bgcolor-dark: var(--color-gray50);
+
+	  --tab-textcolor: var(--color-primary-green);
+	  --tab-hover-bg: var(--color-accent-light);
+	  --tab-active-font: bold;
+
+	  --card-bg-gradient: linear-gradient(120deg, var(--color-gradient-start) 70%, var(--color-gradient-end) 100%);
+	  --card-shadow1: var(--color-shadow-green1);
+	  --card-shadow2: var(--color-shadow-green2);
+	  --card-heading: var(--color-heading-green);
+
+	  --heading-color: var(--color-primary-green);
+
+	  --publication-title-textcolor: var(--color-black);
+	  --publication-author-textcolor: var(--color-author-name);
+	  --publication-status-textcolor: var(--color-status-text);
+	  --publication-conf-bgcolor: var(--color-conf-bg);
+	  --publication-journal-bgcolor: var(--color-primary-green);
+	  --publication-journal-textcolor: var(--color-white);
+	  --publication-conf-textcolor: var(--color-black);
+
+	  --publication-button-bg: var(--color-button-bg);
+	  --publication-button-border: var(--color-button-border);
+	  --publication-button-text: var(--color-white);
+	}
+    body {
+      margin: 0;
+      font-family: Roboto, sans-serif;
+      background: var(--site-bgcolor);
+      color: var(--main-textcolor);
+      font-size: 1.1em; /* General font size increased */
+    }
+    .container {
+      display: flex;
+	  flex-wrap: wrap;
+      min-height: 100vh;
+    }
+    aside {
+      width: 300px;
+      background: var(--sidebar-bgcolor);
+      color: var(--sidebar-textcolor);
+      position: fixed;
+      height: 100vh;
+      padding: 32px 20px 20px 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.2em;
+      border: 3px solid var(--profile-border);
+      box-shadow: 0 2px 8px var(--profile-shadow);
+      background: #d0ffd0;
+    }
+    aside h1 {
+      font-size: 1.7em;
+      margin: 0.3em 0 0.1em 0;
+      font-weight: bold;
+      text-align: center;
+    }
+    aside p {
+      margin: 0.5em 0 0.8em 0;
+      font-size: 1.1em;
+      line-height: 1.4;
+      text-align: center;
+    }
+    aside .contact {
+      margin-top: auto;
+      font-size: 1em;
+      color: #d0ffd0;
+      text-align: center;
+    }
+	.research-areas {
+		margin: 0;
+		padding: 0;
+	}
+
+	.research-areas h3 {
+		margin-top: 40px;
+		margin-bottom: 0px;
+		font-size: 1.0em;
+	}
+
+	.research-areas ul {
+		list-style-type: none; /* Remove default bullet points */
+		padding-left: 0; /* Remove default left padding */
+		font-size: 0.9em;
+	}
+
+	.research-areas li::before {
+		content: "- "; /* Use dash as the bullet */
+		margin-right: 8px; /* Add a small space between the dash and the text */
+	}
+	
+	img {
+	  max-width: 100%;
+	  height: auto;
+	}
+	
+    /* Main content area */
+    main {
+      margin-left: 300px;
+      flex: 1;
+      padding: 40px 32px;
+      box-sizing: border-box;
+      background: var(--main-bgcolor);
+      min-height: 100vh;
+    }
+    /* Tabs */
+    .tab {
+      display: flex;
+      gap: 1em;
+      border-bottom: 1.5px solid #eee;
+      margin-bottom: 2em;
+    }
+    .tab button {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 1em 1.5em;
+      font-size: 1.15em;
+      color: var(--tab-textcolor);
+      border-radius: 6px 6px 0 0;
+      transition: background 0.2s;
+    }
+    .tab button.active, .tab button:hover {
+      background: var(--tab-hover-bg);
+      font-weight: var(--tab-active-font);
+    }
+    .tabcontent {
+      display: none;
+      animation: fadeEffect 0.5s;
+    }
+    .tabcontent.active {
+      display: block;
+    }
+    @keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    /* Card style for content */
+    .section-title {
+      font-size: 1.35em;
+      font-weight: bold;
+      color: var(--card-heading);
+      margin: 1.4em 0 0.4em 0;
+      /* Larger font for subsection titles */
+    }
+    .card {
+      background: linear-gradient(120deg, #f8fafc 70%, #e8f5e9 100%);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px 0 rgba(20, 80, 20, 0.08), 0 1.5px 6px 0 rgba(20, 80, 20, 0.06); /* soft, subtle shadow[3] */
+      padding: 1.1em 1.5em;
+      margin-bottom: 0.7em;
+      margin-top: 0.1em;
+      border: none;
+      width: 100%;
+      max-width: 100%;
+	  box-sizing: border-box;
+      text-align: left;
+	  line-height: 1.6;
+      /* Minimal top/bottom border via small vertical padding/margin */
+    }
+	.CardWithImage1 {
+		background: var(--card-bg-gradient);
+		border-radius: 12px;
+		box-shadow: 0 2px 8px 0 var(--card-shadow1), 0 1.5px 6px 0 var(--card-shadow2); /* soft, subtle shadow[3] */
+		padding: 1.1em 1.5em;
+		margin-bottom: 0.7em;
+		margin-top: 0.1em;
+		border: none;
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+		text-align: left;
+		line-height: 1.6;
+		/* Minimal top/bottom border via small vertical padding/margin */
+	}
+
+	.CardWithImage1-title {
+		font-size: 24px;
+		font-weight: bold;
+		margin-bottom: 12px;
+		text-align: left;
+	}
+
+	.CardWithImage1-content {
+		display: flex;
+		align-items: flex-start;
+	}
+
+	.CardWithImage1-image {
+		width: 40%;
+		margin-right: 20px;
+	}
+
+	.CardWithImage1-image img {
+		width: 100%;
+		border-radius: 8px;
+	}
+
+	.CardWithImage1-text {
+		width: 60%;
+		font-size: 16px;
+		line-height: 1.5;
+	}
+    h2 {
+      font-size: 2em;
+      color: var(--heading-color);
+      margin-top: 0.5em;
+      margin-bottom: 0.7em;
+      font-weight: bold;
+    }
+    ul {
+      margin-left: 1.2em;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 700px) {
+      aside {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	  }
+      main {
+        margin-left: 0;
+        padding: 16px;
+      }
+    }
+	
+	/* Education-related */
+	.education {
+		font-family: Arial, sans-serif;
+		color: #000000;
+		padding: 20px;
+	}
+	.education h1 {
+		color: #d4af37;
+		font-size: 24px;
+		display: flex;
+		align-items: center;
+		margin: 0;
+	}
+	.education h1::before {
+		content: "📖";
+		margin-right: 10px;
+	}
+	.education ul {
+		list-style: none;
+		padding-left: 20px;
+	}
+	.education li {
+		position: relative;
+		margin-bottom: 20px;
+	}
+	.education li::before {
+		content: "";
+		position: absolute;
+		left: -20px;
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		background-color: #d4af37;
+	}
+	.education li:last-child::before {
+		height: 50%;
+	}
+	.education .degree {
+		font-weight: bold;
+		font-size: 18px;
+	}
+	.education .institute {
+		font-style: italic;
+	}
+	.education .years {
+		color: #888;
+	}
+	.education .description {
+		margin-top: 5px;
+	}
+	
+	/* Publication purpose */
+	.publications-header {
+		font-size: 24px;
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	.contribution-note {
+		font-size: 14px;
+		color: #369050;
+		margin-bottom: 20px;
+	}
+	.year {
+		font-size: 20px;
+		font-weight: bold;
+		margin-bottom: 15px;
+	}
+	.publication {
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: 20px;
+	}
+	.publication-source {
+		display: inline-block;
+		padding: 5px 10px;
+		margin-right: 10px;
+		font-size: 14px;
+		font-weight: bold;
+		border-radius: 5px;
+		width: 80px;
+		text-align: center;
+	}
+	.publication-source.journal {
+		background-color: var(--publication-journal-bgcolor);
+		color: var(--publication-journal-textcolor);
+		font-weight: normal;
+	}
+	.publication-source.conf {
+		background-color: var(--publication-conf-bgcolor);
+		color: var(--publication-conf-textcolor);
+		font-weight: normal;
+	}
+	.publication-details {
+		flex: 1;
+	}
+	.publication-title {
+		font-family: Lato, sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 2px;
+	}
+	.publication-authors {
+		font-size: 14px;
+		color: var(--publication-author-textcolor);
+		margin-bottom: 2px;
+	}
+	.publication-status {
+		font-size: 14px;
+		color: var(--publication-status-textcolor);
+		margin-bottom: 5px;
+	}
+	.publication-buttons {
+		display: flex;
+		gap: 10px;
+	}
+	.publication-buttons button {
+		padding: 5px 10px;
+		background-color: var(--publication-button-bg);
+		color: #ffffff;
+		border: 1px solid #555555;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 12px;
+	}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside>
+      <img src="Vivek_A.jpg" alt="Vivek A" class="profile-pic">
+      <h1>Vivek A</h1>
+      <p style="font-size: 0.9em;">Ph.D.,<br>
+         Aerospace Engineering,<br>
+         IIT Madras.</p>
+      <div class="research-areas">
+		<h3>Research Areas</h3>
+		<ul>
+			<li>Motion-planning algorithms</li>
+			<li>Mult-agent systems</li>
+		</ul>
+	  </div>
+	  <div class="contact" style="padding: 20px; font-family: Arial, sans-serif;">
+		<!-- <h3>Contact Information</h3> -->
+		<p>
+			<a href="mailto:your.email@example.com" style="text-decoration: none; color: #6abb78;">
+				vivek3461@gmail.com
+			</a>
+		</p>
+		<div>
+			<a href="https://www.linkedin.com/in/vivek061288" target="_blank" style="text-decoration: none; margin-right: 15px;">
+				<img src="icon_linkedin.svg" alt="LinkedIn" style="vertical-align: middle; width: 24px;">
+			</a>
+			<!-- <a href="tel:+1234567890" style="text-decoration: none; margin-right: 15px;">
+				<img src="icon_phone.svg" alt="Phone" style="vertical-align: middle; width: 24px;">
+			</a> -->
+			<a href="https://scholar.google.com/citations?user=YDOSinAAAAAJ&hl=en" target="_blank" style="text-decoration: none; margin-right: 15px;">
+				<img src="icon_google-scholar.svg" alt="Google Scholar" style="vertical-align: middle; width: 24px;">
+			</a>
+			<a href="https://github.com/vivek3461" target="_blank" style="text-decoration: none; margin-right: 15px;">
+				<img src="icon_github.svg" alt="GitHub" style="vertical-align: middle; width: 24px;">
+			</a>
+			<a href="https://twitter.com/vivek3461" target="_blank" style="text-decoration: none; margin-right: 15px;">
+				<img src="icon_twitter.svg" alt="Twitter" style="vertical-align: middle; width: 24px;">
+			</a>
+			<a href="https://drive.google.com/" target="_blank" style="text-decoration: none;">
+				<img src="icon_cv.svg" alt="CV" style="vertical-align: middle; width: 24px;">
+			</a>
+		</div>
+	</div>
+    </aside>
+    <main>
+      <nav class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'About')">About</button>
+        <button class="tablinks" onclick="openTab(event, 'Research')">Research</button>
+        <button class="tablinks" onclick="openTab(event, 'Publications')">Publications</button>
+      </nav>
+
+      <section id="About" class="tabcontent active">
+        <div class="section-title">About Me</div>
+        <div class="card">
+		  <p>
+			I am currently a <strong>Research Associate</strong> in the <strong>Guidance, Navigation, and Control (GNC) Laboratory</strong> at the Indian Institute of Technology Madras. 
+			My current work focuses on the <em>coordinated net capture of an adversarial aerial target</em>, where I contribute to the development of real-time guidance and control strategies 
+			for multi-agent autonomous systems.
+		  </p>
+		  <p>
+			I completed my Ph.D. in <strong>Aerospace Engineering</strong> from IIT Madras. 
+			My doctoral research, titled <em>"Proportional Navigation-based Guidance Strategies Towards Containment of a Non-maneuvering Target in Planar Engagements"</em>, 
+			investigated cooperative guidance mechanisms for containing targets using analytical models and simulation-driven validation.
+		  </p>
+		  <p>
+			My research interests span <em>guidance and control theory</em>, <em>multi-agent coordination</em>, <em>pursuit-evasion games</em>, and <em>autonomous aerial systems</em>. 
+			I am also deeply interested in <em>sensors</em>, <em>modeling of dynamical systems</em>, and <em>optimal control</em>. 
+			As I explore motion planning for autonomous vehicles, I find great motivation in its overlaps with <strong>robotics</strong>, especially in areas like 
+			<em>robotic manipulation</em>, <em>drone navigation</em>, and <em>multi-robot coordination</em>.
+		  </p>
+		  <p>
+			Beyond engineering, I find joy in exploring <strong>mathematics</strong> for its own elegance and challenge—often driven by curiosity more than necessity.
+		  </p>
+        </div>
+        <div class="section-title">Interests & Motivation</div>
+        <div class="card">
+          My interests extend to sensors, modeling dynamical systems, and optimal control. I find joy in exploring mathematics for the sheer thrill of it. As I explore motion planning for autonomous vehicles, I am equally passionate about the significant overlaps with robotics, driving my interest in diverse robotic applications, such as robotic manipulation, drone navigation, and multi-robot coordination.
+        </div>
+		<div class="card">
+          <ul>
+            <li>Motion Planning for Autonomous Vehicles</li>
+            <li>Robotics and Multi-Robot Coordination</li>
+            <li>Optimal Control</li>
+            <li>Sensor Integration and Data Fusion</li>
+          </ul>
+        </div>
+		<div class="section-title">Education</div>
+        <div class="card">
+			<div class="education">
+				<ul>
+					<li>
+						<div class="degree">Ph.D.</div>
+						<div class="institute">Indian Institute of Technology Madras</div>
+						<div class="years">2019 – current</div>
+						<div class="description">Working on development of the motion planning algorithms for time and angle-constrained approach.</div>
+					</li>
+					<li>
+						<div class="degree">M.Tech.</div>
+						<div class="institute">National Institute of Technology Tiruchirappalli</div>
+						<div class="years">2013 – 2015</div>
+						<div class="description">Process Control and Instrumentation (Development of the tip clearance measurement sensor for compressor stage of turbines).</div>
+					</li>
+					<li>
+						<div class="degree">B.E.</div>
+						<div class="institute">Madras Institute of Technology, Chennai</div>
+						<div class="years">2006 – 2010</div>
+						<div class="description">Electronics and Instrumentation Engineering.</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+      </section>
+
+      <section id="Research" class="tabcontent">
+        <div class="section-title">Research Interests</div>
+		<div class="CardWithImage1">
+			<div class="CardWithImage1-title">Coordinated Guidance for a Two-agent System</div>
+			<div class="CardWithImage1-content">
+				<div class="CardWithImage1-image">
+					<!-- <img src="font-infography.jpg" alt="Sample Image"> -->
+					<img src="Sample.gif" alt="Sample Image">
+				</div>
+				<div class="CardWithImage1-text">
+					My interests extend to sensors, modeling dynamical systems, and optimal control. I find joy in exploring mathematics for its sheer thrill. As I explore motion planning for autonomous vehicles, I am equally passionate about the significant overlaps with robotics, driving my interest in diverse robotic applications, such as robotic manipulation, drone navigation, and multi-robot coordination.
+				</div>
+			</div>
+		</div>
+        <div class="section-title">Current Work</div>
+        <div class="card">
+          <ul>
+            <li><strong>Angle and Time-Controlled Approach:</strong> Algorithms to reach a moving point at a specific time and orientation.</li>
+            <li><strong>Kinematic Modelling:</strong> Modeling of vehicles carrying flexible loads.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="Publications" class="tabcontent">
+		<!-- <div class="publications-header">Publications</div> -->
+		<div class="contribution-note">* indicates equal contribution.</div>
+		<div class="card">
+			2024
+			<div class="publication">
+				<div class="publication-source journal">AIAA-JGCD</div>
+				<div class="publication-details">
+					<div class="publication-title">
+						<a href="https://doi.org/10.2514/1.G008450" target="_blank" style="text-decoration: none; color: black;">Proportional-Navigation-Based All-Aspect Approach Against Nonmaneuvering Target Using Phase-Plane Trajectory Shaping</a>
+					</div>
+					<div class="publication-authors"><b>Vivek A</b> and Satadal Ghosh</div>
+					<div class="publication-status">Journal of Guidance, Control, and Dynamics</div>
+				</div>
+			</div>
+			<div class="publication">
+				<div class="publication-source journal">IEEE-TAES</div>
+				<div class="publication-details">
+					<div class="publication-title">
+						<a href="https://ieeexplore.ieee.org/document/10623316" target="_blank" style="text-decoration: none; color: black;">Multi-Pursuer Interdiction Guidance Against Stationary Targets With Inter-Pursuer Collision Avoidance</a>
+					</div>
+					<div class="publication-authors"><b>Vivek A</b> and Satadal Ghosh</div>
+					<div class="publication-status">IEEE Transactions on Aerospace and Electronic Systems</div>
+				</div>
+			</div>
+			<div class="publication">
+				<div class="publication-source conf">SICE</div>
+				<div class="publication-details">
+					<div class="publication-title">
+						<a href="https://ieeexplore.ieee.org/document/10805109" target="_blank" style="text-decoration: none; color: black;">Coordinated Guidance Strategy for a Fixed-Distance-Separated Two-Agent System</a>
+					</div>
+					<div class="publication-authors"><b>Vivek A</b> and Satadal Ghosh</div>
+					<div class="publication-status">In 2024 SICE Festival with Annual Conference (SICE FES)</div>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			2023
+			<div class="publication">
+				<div class="publication-source conf">CDC</div>
+				<div class="publication-details">
+					<div class="publication-title">
+						<a href="https://ieeexplore.ieee.org/document/10383625/" target="_blank" style="text-decoration: none; color: black;">Guidance for Terminal Direction and Final Time Constrained-Approach Towards a Moving Target</a>
+					</div>
+					<div class="publication-authors"><b>Vivek A</b> and Satadal Ghosh</div>
+					<div class="publication-status">In 2023 62nd IEEE Conference on Decision and Control (CDC)</div>
+				</div>
+			</div>
+			<div class="publication">
+				<div class="publication-source conf">ICUAS</div>
+				<div class="publication-details">
+					<div class="publication-title">
+						<a href="https://ieeexplore.ieee.org/document/10623316" target="_blank" style="text-decoration: none; color: black;">Proportional Navigation-Based Guidance for an Autonomous Interdiction Mission Against a Stationary Target</a>
+					</div>
+					<div class="publication-authors">Aman Choudhary, <b>Vivek A</b>, and Satadal Ghosh</div>
+					<div class="publication-status">In 2023 International Conference on Unmanned Aircraft Systems (ICUAS)</div>
+				</div>
+			</div>
+			<div class="publication">
+				<div class="publication-source conf">AIAA SCITECH</div>
+				<div class="publication-details">
+					<div class="publication-title">
+						<a href="https://arc.aiaa.org/doi/10.2514/6.2023-2161" target="_blank" style="text-decoration: none; color: black;">A Guidance for Simultaneous Formation about a Stationary Point</a>
+					</div>
+					<div class="publication-authors"><b>Vivek A</b> and Satadal Ghosh</div>
+					<div class="publication-status">In AIAA SCITECH 2023 Forum</div>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+		2019
+			<div class="publication"> 
+				<div class="publication-source journal">IMechE-G</div>
+				<div class="publication-details">
+					<div class="publication-title">
+						<a href="https://doi.org/10.1177/0954410019865853" target="_blank" style="text-decoration: none; color: black;">Novel resistor-capacitor (RC) network-based capacitance signal conditioning circuit for tip clearance measurement on gas turbine engine</a>
+					</div>
+					<div class="publication-authors">TN Satish, <b>A Vivek</b>, SN Anagha, ANV Rao, G Uma, M Umapathy, U Chandrasekhar, and G Kiran</div>
+					<div class="publication-status">Proceedings of the Institution of Mechanical Engineers, Part G: Journal of Aerospace Engineering</div>
+				</div>
+			</div>
+		</div>
+		
+      </section>
+    </main>
+  </div>
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+</body>
+</html>
