@@ -73,7 +73,8 @@
       font-size: 1.1em; /* General font size increased */
     }
     .container {
-      display: flex;
+      width: 70%; /* Set container to 70% of screen width */
+	  margin: 0 auto; /* Center the container with equal left and right margins (15% each side) */display: flex;
 	  flex-wrap: wrap;
       min-height: 100vh;
     }
@@ -153,6 +154,7 @@
       box-sizing: border-box;
       background: var(--main-bgcolor);
       min-height: 100vh;
+	  width: 100%; /* Ensure main takes full width of the container */
     }
     /* Tabs */
     .tab {
@@ -199,9 +201,9 @@
       background: linear-gradient(120deg, #f8fafc 70%, #e8f5e9 100%);
       border-radius: 12px;
       box-shadow: 0 2px 8px 0 rgba(20, 80, 20, 0.08), 0 1.5px 6px 0 rgba(20, 80, 20, 0.06); /* soft, subtle shadow[3] */
-      padding: 1.1em 1.5em;
+      padding: 0.5em 1.5em;
       margin-bottom: 0.7em;
-      margin-top: 0.1em;
+      margin-top: 0em;
       border: none;
       width: 100%;
       max-width: 100%;
@@ -405,7 +407,7 @@
 <body>
   <div class="container">
     <aside>
-      <img src="Vivek_A.jpg" alt="Vivek A" class="profile-pic">
+      <img src="images/Vivek_A.jpg" alt="Vivek A" class="profile-pic">
       <h1>Vivek A</h1>
       <p style="font-size: 0.9em;">Ph.D.,<br>
          Aerospace Engineering,<br>
@@ -420,28 +422,28 @@
 	  <div class="contact" style="padding: 20px; font-family: Arial, sans-serif;">
 		<!-- <h3>Contact Information</h3> -->
 		<p>
-			<a href="mailto:your.email@example.com" style="text-decoration: none; color: #6abb78;">
+			<a href="mailto:vivek3461@gmail.com" style="text-decoration: none; color: #6abb78;">
 				vivek3461@gmail.com
 			</a>
 		</p>
 		<div>
 			<a href="https://www.linkedin.com/in/vivek061288" target="_blank" style="text-decoration: none; margin-right: 15px;">
-				<img src="icon_linkedin.svg" alt="LinkedIn" style="vertical-align: middle; width: 24px;">
+				<img src="images/icon_linkedin.svg" alt="LinkedIn" style="vertical-align: middle; width: 24px;">
 			</a>
 			<!-- <a href="tel:+1234567890" style="text-decoration: none; margin-right: 15px;">
 				<img src="icon_phone.svg" alt="Phone" style="vertical-align: middle; width: 24px;">
 			</a> -->
 			<a href="https://scholar.google.com/citations?user=YDOSinAAAAAJ&hl=en" target="_blank" style="text-decoration: none; margin-right: 15px;">
-				<img src="icon_google-scholar.svg" alt="Google Scholar" style="vertical-align: middle; width: 24px;">
+				<img src="images/icon_google-scholar.svg" alt="Google Scholar" style="vertical-align: middle; width: 24px;">
 			</a>
 			<a href="https://github.com/vivek3461" target="_blank" style="text-decoration: none; margin-right: 15px;">
-				<img src="icon_github.svg" alt="GitHub" style="vertical-align: middle; width: 24px;">
+				<img src="images/icon_github.svg" alt="GitHub" style="vertical-align: middle; width: 24px;">
 			</a>
 			<a href="https://twitter.com/vivek3461" target="_blank" style="text-decoration: none; margin-right: 15px;">
-				<img src="icon_twitter.svg" alt="Twitter" style="vertical-align: middle; width: 24px;">
+				<img src="images/icon_twitter.svg" alt="Twitter" style="vertical-align: middle; width: 24px;">
 			</a>
 			<a href="https://drive.google.com/" target="_blank" style="text-decoration: none;">
-				<img src="icon_cv.svg" alt="CV" style="vertical-align: middle; width: 24px;">
+				<img src="images/icon_cv.svg" alt="CV" style="vertical-align: middle; width: 24px;">
 			</a>
 		</div>
 	</div>
@@ -457,52 +459,49 @@
         <div class="section-title">About Me</div>
         <div class="card">
 		  <p>
-			I am currently a <strong>Research Associate</strong> in the <strong>Guidance, Navigation, and Control (GNC) Laboratory</strong> at the Indian Institute of Technology Madras. 
-			My current work focuses on the <em>coordinated net capture of an adversarial aerial target</em>, where I contribute to the development of real-time guidance and control strategies 
-			for multi-agent autonomous systems.
+			I am currently a <strong>Research Associate</strong> in the 
+			<strong>Guidance, Navigation, and Control (GNC) Laboratory</strong> at the 
+			<strong>Indian Institute of Technology Madras</strong>. My current work focuses on the 
+			<em>coordinated net capture of an adversarial aerial target</em>, where I contribute to the development of 
+			<strong>coordinated guidance and control strategies</strong> for multiple UAVs to carry a net and approach the target.
 		  </p>
+		  
 		  <p>
-			I completed my Ph.D. in <strong>Aerospace Engineering</strong> from IIT Madras. 
-			My doctoral research, titled <em>"Proportional Navigation-based Guidance Strategies Towards Containment of a Non-maneuvering Target in Planar Engagements"</em>, 
-			investigated cooperative guidance mechanisms for containing targets using analytical models and simulation-driven validation.
+			I completed my Ph.D. in the <strong>Department of Aerospace Engineering</strong> at 
+			<strong>IIT Madras</strong>. My doctoral research, titled 
+			<em>"Proportional Navigation-based Guidance Strategies Towards Containment of a Non-maneuvering Target in Planar Engagements"</em>, 
+			involved developing <em>time and angle-constrained guidance strategies</em> for containing targets, 
+			leveraging the <strong>Proportional Navigation (PN)</strong> guidance law.
 		  </p>
+		  
 		  <p>
-			My research interests span <em>guidance and control theory</em>, <em>multi-agent coordination</em>, and <em>motion planning algorithms</em>. 
-			I am also deeply interested in <em>sensors</em>, <em>modeling of dynamical systems</em>, and <em>optimal control</em>. 
-			As I explore motion planning for autonomous vehicles, I find great motivation in its overlaps with <strong>robotics</strong>, especially in areas like 
-			<em>robotic manipulation</em>, <em>drone navigation</em>, and <em>multi-robot coordination</em>.
+			My research interests span <strong>guidance and control of autonomous vehicles</strong>, 
+			<strong>multi-agent coordination</strong>, and <strong>motion planning algorithms</strong>. 
+			As I explore motion planning for autonomous UAVs, I find great motivation in its overlaps with 
+			<strong>robotic applications</strong>, especially in areas like <em>robotic manipulation</em>.
 		  </p>
+		  
 		  <p>
-			Beyond engineering, I find joy in exploring <strong>mathematics</strong> for its own elegance and challenge—often driven by curiosity more than necessity.
+			I am also deeply interested in <strong>optimal control of robotic systems</strong> and <em>integration of sensors' information that goes in to the guidance block</em>. 
+			Beyond engineering, I find joy in exploring <strong>mathematics</strong> for its own elegance and challenge, 
+			often driven by curiosity more than necessity.
 		  </p>
         </div>
-        <div class="section-title">Interests & Motivation</div>
-        <div class="card">
-          My interests extend to sensors, modeling dynamical systems, and optimal control. I find joy in exploring mathematics for the sheer thrill of it. As I explore motion planning for autonomous vehicles, I am equally passionate about the significant overlaps with robotics, driving my interest in diverse robotic applications, such as robotic manipulation, drone navigation, and multi-robot coordination.
-        </div>
-		<div class="card">
-          <ul>
-            <li>Motion Planning for Autonomous Vehicles</li>
-            <li>Robotics and Multi-Robot Coordination</li>
-            <li>Optimal Control</li>
-            <li>Sensor Integration and Data Fusion</li>
-          </ul>
-        </div>
-		<div class="section-title">Education</div>
+		<div class="section-title">Academic Journey</div>
         <div class="card">
 			<div class="education">
 				<ul>
 					<li>
 						<div class="degree">Ph.D.</div>
 						<div class="institute">Indian Institute of Technology Madras</div>
-						<div class="years">2019 – current</div>
-						<div class="description">Working on development of the motion planning algorithms for time and angle-constrained approach.</div>
+						<div class="years">2019 – 2024</div>
+						<div class="description">Thesis: "<em>Proportional Navigation-based Guidance Strategies Towards Containment of a Non-maneuvering Target in Planar Engagements.</em>"</div>
 					</li>
 					<li>
 						<div class="degree">M.Tech.</div>
 						<div class="institute">National Institute of Technology Tiruchirappalli</div>
 						<div class="years">2013 – 2015</div>
-						<div class="description">Process Control and Instrumentation (Development of the tip clearance measurement sensor for compressor stage of turbines).</div>
+						<div class="description">Process Control and Instrumentation (Project: "<em>Development of the tip clearance measurement sensor for compressor stage of turbines</em>).</div>
 					</li>
 					<li>
 						<div class="degree">B.E.</div>
@@ -513,29 +512,63 @@
 				</ul>
 			</div>
 		</div>
+		<div class="section-title">Professional Experience</div>
+        <div class="card">
+			<div class="education">
+				<ul>
+					<li>
+						<div class="degree">Software Designer</div>
+						<div class="institute">ALSTOM Transport India Limited.</div>
+						<div class="years">2015 – 2019</div>
+					</li>
+					<li>
+						<div class="degree">Engineer-Instrumentation</div>
+						<div class="institute">Engineers India Limited.</div>
+						<div class="years">2010 – 2013</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="section-title">Other Professional Services</div>
+		<div class="card">
+		  <p>
+			I actively serve as a reviewer for top-tier journals and international conferences in the fields of 
+			<em>guidance and control</em>, <em>aerospace systems</em>, and <em>robotics</em>. 
+			These opportunities allow me to stay closely connected with the latest research while contributing to the scientific community.
+		  </p>
+		  <p>Here is the list of venues I’ve reviewed for:</p>
+		  <ul>
+			<li>IEEE Transactions on Control Systems Technology</li>
+			<li>Aerospace Science and Technology</li>
+			<li>Nonlinear Dynamics</li>
+			<li>IEEE Conference on Decision and Control (CDC)</li>
+			<li>American Control Conference (ACC)</li>
+			<li>European Control Conference (ECC)</li>
+			<li>AIAA SciTech Forum</li>
+		  </ul>
+		</div>
       </section>
 
       <section id="Research" class="tabcontent">
-        <div class="section-title">Research Interests</div>
+        <!-- <div class="section-title">Research Interests</div> -->
 		<div class="CardWithImage1">
-			<div class="CardWithImage1-title">Coordinated Guidance for a Two-agent System</div>
+			<div class="CardWithImage1-title">Coordinated Guidance for a Multi-agent System</div>
 			<div class="CardWithImage1-content">
 				<div class="CardWithImage1-image">
 					<!-- <img src="font-infography.jpg" alt="Sample Image"> -->
-					<img src="Sample.gif" alt="Sample Image">
+					<img src="images/ToBeUpdated.gif" alt="Sample Image">
 				</div>
 				<div class="CardWithImage1-text">
-					My interests extend to sensors, modeling dynamical systems, and optimal control. I find joy in exploring mathematics for its sheer thrill. As I explore motion planning for autonomous vehicles, I am equally passionate about the significant overlaps with robotics, driving my interest in diverse robotic applications, such as robotic manipulation, drone navigation, and multi-robot coordination.
+					To be updated.
 				</div>
 			</div>
 		</div>
-        <div class="section-title">Current Work</div>
+        <!-- <div class="section-title">PhD Works</div>
         <div class="card">
           <ul>
             <li><strong>Angle and Time-Controlled Approach:</strong> Algorithms to reach a moving point at a specific time and orientation.</li>
-            <li><strong>Kinematic Modelling:</strong> Modeling of vehicles carrying flexible loads.</li>
           </ul>
-        </div>
+        </div> -->
       </section>
 
       <section id="Publications" class="tabcontent">
@@ -620,6 +653,7 @@
 				</div>
 			</div>
 		</div>
+</section>
 		
       </section>
     </main>
