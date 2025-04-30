@@ -4,77 +4,104 @@
   <meta charset="UTF-8">
   <title>Vivek A - Personal Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+<style>
     :root {
       /* 🎨 Base Color Tokens */
-      --color-white: #ffffff;
+	  --color-white: #ffffff;
       --color-black: #000000;
       --color-gray50: #777777;
       --color-background: #f9f9f9;
-      --color-primary-green: #357246;
+      
       --color-accent-light: #d0ffd0;
-      --color-dark-bg: #2f4f4f;
+      
       --color-text-main: #222;
-      --color-heading-green: #34523d;
+      
       --color-shadow-dark: rgba(0, 0, 0, 0.13);
       --color-shadow-green1: rgba(20, 80, 20, 0.08);
       --color-shadow-green2: rgba(20, 80, 20, 0.06);
-      --color-gradient-start: #f8fafc;
-      --color-gradient-end: #e8f5e9;
+      
       --color-conf-bg: #b0c0d0;
-      --color-author-name: #369050;
-      --color-status-text: #8e3424;
-      --color-button-bg: #333333;
-      --color-button-border: #555555;
+      
 	  --color-golden-yellow: #a88820;
 	  --color-green-middle: #419656;
 	  --color-green-light: #8ccd90;
+	  
+	  /* Newly added */
+	  --color-bg-light: #f9fafb;
+	  --color-bg-dark: #1a202c;
+	  --color-text-main: #2d3748;
+	  --color-text-muted: #4a5568;
+	  --color-accent: #38a169;
+	  --color-heading: #2b6cb0;
+	  --color-highlight: #f6ad55;
+	  
+      --color-white: #ffffff;
+	  --color-black: #000000;
+	  --color-slate-100: #f9fafb;
+	  --color-slate-800: #2d3748;
+	  --color-slate-600: #4a5568;
+	  --color-navy-900: #1a202c;
+	  --color-blue-700: #2b6cb0;
+	  --color-green-500: #38a169;
+	  --color-orange-400: #f6ad55;
+	  --color-gray-100: #edf2f7;
+	  --color-teal-50: #e6fffa;
+	  --color-teal-100: #c6f6d5;
+	  
+	  --color-blue-soft: #bee3f8;
 
       /* 🧩 Semantic Tokens */
-      --site-bgcolor: var(--color-background);
-      --main-textcolor: var(--color-text-main);
+      --site-bgcolor: var(--color-slate-100);
+	  --main-textcolor: var(--color-slate-800);
 
-      --sidebar-bgcolor: var(--color-dark-bg);
-      --sidebar-textcolor: var(--color-white);
-      --sidebar-highlight: var(--color-accent-light);
+	  --sidebar-bgcolor: var(--color-navy-900);
+	  --sidebar-textcolor: var(--color-gray-100);
+	  --sidebar-highlight: var(--color-teal-100);
 
-      --profile-border: var(--color-white);
-      --profile-shadow: var(--color-shadow-dark);
-      --profile-bgcolor: var(--color-accent-light);
-      
-      --main-bgcolor: var(--color-white);
-      --main-bgcolor-dark: var(--color-gray50);
+	  --profile-border: var(--color-white);
+	  --profile-shadow: rgba(0, 0, 0, 0.15);
+	  --profile-bgcolor: var(--color-teal-100);
 
-      /*--tab-textcolor: var(--color-primary-green); */
-	  /*--tab-textcolor: var(--color-golden-yellow); */
-	  --tab-textcolor: var(--color-green-middle);
+	  --main-bgcolor: var(--color-white);
+	  --main-bgcolor-dark: var(--color-slate-600);
+
+	  --tab-textcolor: var(--color-green-500);
 	  --tab-hover-bg: var(--color-white);
-      /*--tab-hover-bg: var(--color-accent-light);*/
-      --tab-active-font: bold;
+	  --tab-active-font: bold;
 
-      --card-bg-gradient: linear-gradient(120deg, var(--color-gradient-start) 70%, var(--color-gradient-end) 100%);
-      --card-shadow1: var(--color-shadow-green1);
-      --card-shadow2: var(--color-shadow-green2);
-      --card-heading: var(--color-heading-green);
+	  --card-bg-gradient: linear-gradient(120deg, var(--color-gray-100) 70%, var(--color-teal-50) 100%);
+	  --card-shadow1: rgba(0, 0, 0, 0.08);
+	  --card-shadow2: rgba(0, 0, 0, 0.06);
+	  --card-heading: var(--color-blue-700);
 
-      --heading-color: var(--color-primary-green);
+	  --heading-color: var(--color-blue-700);
 
-      --publication-title-textcolor: var(--color-black);
-      --publication-author-textcolor: var(--color-author-name);
-      --publication-status-textcolor: var(--color-golden-yellow);
-      --publication-conf-bgcolor: var(--color-conf-bg);
-      --publication-journal-bgcolor: var(--color-primary-green);
-      --publication-journal-textcolor: var(--color-white);
-      --publication-conf-textcolor: var(--color-black);
+	  --publication-title-textcolor: var(--color-black);
+	  --publication-author-textcolor: var(--color-green-500);
+	  --publication-status-textcolor: #2c7a7b;  /* var(--color-orange-400); */
+	  --publication-conf-bgcolor: #bee3f8;  /* var(--color-blue-soft); */
+	  --publication-journal-bgcolor: var(--color-blue-700);
+	  --publication-journal-textcolor: var(--color-white);
+	  --publication-conf-textcolor: #1a202c; /* var(--color-black); */
 
-      --publication-button-bg: var(--color-button-bg);
-      --publication-button-border: var(--color-button-border);
-      --publication-button-text: var(--color-white);
+	  --publication-button-bg: var(--color-slate-600);
+	  --publication-button-border: var(--color-slate-600);
+	  --publication-button-text: var(--color-white);
 
-      /* New Semantic Tokens for Banner */
-      --banner-bgcolor: var(--color-dark-bg);
-      --banner-textcolor: var(--color-white);
-      --body-bgcolor: var(--color-white);
+	  --banner-bgcolor: var(--color-navy-900);
+	  --banner-textcolor: var(--color-white);
+	  --body-bgcolor: var(--color-white);
+	  
+	  /* Newly added */
+	  --color-dark-bg: var(--sidebar-bgcolor);
+	  --color-primary-green: var(--tab-textcolor);
+	  --color-heading-green: var(--card-heading);
+	  --color-gradient-start: var(--color-gray-100);
+	  --color-gradient-end: var(--color-teal-50);
+	  --color-author-name: var(--publication-author-textcolor);
+	  --color-status-text: var(--publication-status-textcolor);
+	  --color-button-bg: var(--publication-button-bg);
+	  --color-button-border: var(--publication-button-border);
     }
     body {
       margin: 0;
@@ -112,7 +139,7 @@
       margin-bottom: 1.2em;
       border: 3px solid var(--profile-border);
       box-shadow: 0 2px 8px var(--profile-shadow);
-      background: #d0ffd0;
+      background: var(--sidebar-highlight);
     }
     aside h1 {
       font-size: 1.7em;
@@ -175,7 +202,7 @@
       box-sizing: border-box;
       height: 60px;
       z-index: 3;
-      border-bottom: 1.5px solid #eee;
+      border-bottom: 1.5px solid #777;
     }
     .banner .name {
       font-size: 1.5em;
@@ -217,6 +244,35 @@
       width: 100%; /* Ensure main takes full width of the container */
       overflow-y: scroll; /* Force vertical scrollbar to always appear */
     }
+	/* Custom scrollbar for light and dark modes */
+    main::-webkit-scrollbar {
+      width: 8px; /* Width of the scrollbar */
+	  -ms-overflow-style: none;  /* IE and Edge */
+	  scrollbar-width: none;     /* Firefox */
+	  display: none; 
+    }
+    
+    main::-webkit-scrollbar-track {
+      background: var(--color-gray-100); /* Track color */
+      border-radius: 5px;
+    }
+    
+    main::-webkit-scrollbar-thumb {
+      background-color: var(--color-slate-600); /* Thumb color */
+      border-radius: 5px;
+      border: 2px solid var(--color-gray-100); /* Creates padding around the thumb */
+    }
+    
+    /* Dark mode specific scrollbar styles */
+      body.dark-mode main::-webkit-scrollbar-track {
+      background: var(--color-navy-900);
+    }
+    
+    body.dark-mode main::-webkit-scrollbar-thumb {
+      background-color: var(--color-slate-600);
+      border: 2px solid var(--color-navy-900);
+    }
+	
     /* Class to remove margin when sidebar is hidden */
     .main-full-width {
       margin-left: 0;
@@ -242,7 +298,8 @@
       /* Larger font for subsection titles */
     }
     .card {
-      background: linear-gradient(120deg, #f8fafc 70%, #e8f5e9 100%);
+      background: var(--card-bg-gradient); /* linear-gradient(120deg, var(--color-gray-100) 70%, var(--color-teal-50) 100%); */
+	  color: var(--main-textcolor);
       border-radius: 12px;
       box-shadow: 0 2px 8px 0 rgba(20, 80, 20, 0.08), 0 1.5px 6px 0 rgba(20, 80, 20, 0.06); /* soft, subtle shadow[3] */
       padding: 0.5em 1.5em;
@@ -259,7 +316,7 @@
     .CardWithImage1 {
       background: var(--card-bg-gradient);
       border-radius: 12px;
-		box-shadow: 0 2px 8px 0 var(--card-shadow1), 0 1.5px 6px 0 var(--card-shadow2); /* soft, subtle shadow[3] */
+	  box-shadow: 0 2px 8px 0 var(--card-shadow1), 0 1.5px 6px 0 var(--card-shadow2); /* soft, subtle shadow[3] */
       padding: 1.1em 1.5em;
       margin-bottom: 0.7em;
       margin-top: 0.1em;
@@ -271,29 +328,146 @@
       line-height: 1.6;
 		/* Minimal top/bottom border via small vertical padding/margin */
     }
-    .CardWithImage1-title {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 12px;
-      text-align: left;
-    }
-    .CardWithImage1-content {
-      display: flex;
-      align-items: flex-start;
-    }
-    .CardWithImage1-image {
-      width: 40%;
-      margin-right: 20px;
-    }
-    .CardWithImage1-image img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .CardWithImage1-text {
-      width: 60%;
-      font-size: 16px;
-      line-height: 1.5;
-    }
+    .CardWithImage1 {
+	  display: flex;
+	  flex-direction: row;
+	  background: var(--card-bg-gradient);
+	  border-radius: 16px;
+	  box-shadow: 0 2px 10px var(--card-shadow1), 0 1px 5px var(--card-shadow2);
+	  padding: 1.5em;
+	  margin-bottom: 1.5em;
+	  gap: 1.5em;
+	  align-items: flex-start;
+	  flex-wrap: wrap;
+	}
+
+	.CardWithImage1-image {
+	  flex: 1 1 250px;
+	  max-width: 300px;
+	}
+
+	.CardWithImage1-image img {
+	  width: 100%;
+	  border-radius: 12px;
+	  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+	}
+
+	.CardWithImage1-content {
+	  flex: 2 1 300px;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	}
+
+	.CardWithImage1-title {
+	  font-size: 1.5em;
+	  font-weight: bold;
+	  color: var(--heading-color);
+	  margin-bottom: 0.5em;
+	}
+
+	.CardWithImage1-text {
+	  font-size: 1em;
+	  line-height: 1.7;
+	  color: var(--main-textcolor);
+	  text-align: justify;
+	}
+	
+	.CardWithImage1-buttons {
+	  margin-top: 1em;
+	}
+
+	.btn-card {
+	  display: inline-block;
+	  padding: 0.6em 1.2em;
+	  background-color: var(--tab-textcolor);
+	  color: var(--color-white);
+	  text-decoration: none;
+	  border-radius: 6px;
+	  font-weight: 600;
+	  font-size: 0.95em;
+	  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	  transition: background 0.3s ease;
+	}
+
+	.btn-card:hover,
+	.btn-card:focus {
+	  background-color: var(--color-green-500);
+	}
+	
+	.CardWithImageHalf {
+	  display: flex;
+	  flex-direction: column;
+	  background: var(--card-bg-gradient);
+	  border-radius: 12px;
+	  box-shadow: 0 2px 8px var(--card-shadow1), 0 1px 5px var(--card-shadow2);
+	  padding: 1em 1.2em;
+	  width: 48%;
+	  max-width: 48%;
+	  box-sizing: border-box;
+	  margin-bottom: 1.5em;
+	}
+
+	.CardWithImageHalf-image img {
+	  width: 100%;
+	  height: auto;
+	  border-radius: 10px;
+	  margin-bottom: 1em;
+	}
+
+	.CardWithImageHalf-title {
+	  font-size: 1.3em;
+	  font-weight: bold;
+	  color: var(--heading-color);
+	  margin-bottom: 0.5em;
+	}
+
+	.CardWithImageHalf-text {
+	  font-size: 0.95em;
+	  line-height: 1.6;
+	  color: var(--main-textcolor);
+	  text-align: justify;
+	}
+	
+	.visually-hidden {
+	  position: absolute;
+	  width: 1px;
+	  height: 1px;
+	  margin: -1px;
+	  padding: 0;
+	  overflow: hidden;
+	  clip: rect(0, 0, 0, 0);
+	  border: 0;
+	}
+	
+	.collapsible {
+	  overflow: hidden;
+	  transition: max-height 0.4s ease;
+	  display: -webkit-box;
+	  -webkit-line-clamp: 3;     /* 👈 Show first 3 lines */
+	  -webkit-box-orient: vertical;
+	}
+
+	.collapsible.expanded {
+	  -webkit-line-clamp: unset;
+	  max-height: 1000px; /* Or auto, but this ensures smooth transition */
+	}
+
+	.toggle-button {
+	  margin-top: 1em;
+	  background-color: var(--tab-textcolor);
+	  color: var(--color-white);
+	  padding: 0.5em 1em;
+	  border: none;
+	  border-radius: 6px;
+	  cursor: pointer;
+	  font-size: 0.95em;
+	}
+
+	.toggle-button:hover {
+	  background-color: var(--color-green-500);
+	}
+	
     h2 {
       font-size: 2em;
       color: var(--heading-color);
@@ -332,15 +506,33 @@
         padding: 0.8em 1em;
         font-size: 1em;
       }
+	  .CardWithImage1 {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	  }
+
+	  .CardWithImage1-content {
+		align-items: center;
+	  }
+
+	  .CardWithImage1-title,
+	  .CardWithImage1-text {
+		text-align: center;
+	  }
+	  
+	  .CardWithImageHalf {
+		width: 100%;
+	  }
     }
     /* Education-related */
     .education {
       font-family: Arial, sans-serif;
-      color: #000000;
+      color: var(--main-textcolor);
       padding: 20px;
     }
     .education h1 {
-      color: #d4af37;
+      color: var(--publication-status-textcolor);
       font-size: 24px;
       display: flex;
       align-items: center;
@@ -365,7 +557,7 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background-color: #d4af37;
+      background-color: var(--publication-status-textcolor);
     }
     .education li:last-child::before {
       height: 50%;
@@ -386,7 +578,7 @@
       font-style: italic;
     }
     .education .years {
-      color: #888;
+      color: var(--color-slate-600);
 	  text-align: right;
     }
     .education .description {
@@ -403,7 +595,7 @@
     }
     .contribution-note {
       font-size: 14px;
-      color: #369050;
+      color: var(--publication-author-textcolor);
       margin-bottom: 20px;
     }
     .year {
@@ -462,13 +654,83 @@
     .publication-buttons button {
       padding: 5px 10px;
       background-color: var(--publication-button-bg);
-      color: #ffffff;
-      border: 1px solid #555555;
+      color: var(--color-white);
+      border: 1px solid var(--publication-button-border);
       border-radius: 5px;
       cursor: pointer;
       font-size: 12px;
     }
-  </style>
+  
+	body.dark-mode {
+	  /* Base theme colors */
+	  --site-bgcolor: #1a202c;
+	  --main-textcolor: #edf2f7;
+	  --sidebar-bgcolor: #2d3748;
+	  --sidebar-textcolor: #e2e8f0;
+	  --sidebar-highlight: #68d391;
+	  --profile-bgcolor: #4a5568;
+	  --profile-border: #68d391;
+	  --profile-shadow: rgba(0, 0, 0, 0.3);
+  
+	  /* UI elements */
+	  --tab-textcolor: #68d391;
+	  --tab-hover-bg: #2d3748;
+	  --card-bg-gradient: linear-gradient(120deg, #2d3748 70%, #1a202c 100%);
+	  --card-shadow1: rgba(0, 0, 0, 0.2);
+	  --card-shadow2: rgba(0, 0, 0, 0.15);
+  
+	  /* Typography */
+	  --heading-color: #90cdf4;
+	  --main-bgcolor: #1a202c;
+	  --main-bgcolor-dark: #2d3748;
+  
+	  /* Publications */
+	  --publication-title-textcolor: #edf2f7;
+	  --publication-author-textcolor: #68d391;
+	  --publication-status-textcolor: #bee3f8;
+	  --publication-conf-bgcolor: #2c5282;
+	  --publication-conf-textcolor: #e6fffa;
+	  --publication-journal-bgcolor: #4299e1;
+	  --publication-journal-textcolor: #1a202c;
+	  --publication-button-bg: #4a5568;
+	  --publication-button-border: #2d3748;
+  
+	  /* Banner and layout */
+	  --banner-bgcolor: #2d3748;
+	  --banner-textcolor: #e2e8f0;
+	  --body-bgcolor: #1a202c;
+	}
+
+	/* Dark mode specific overrides for links and other elements */
+	body.dark-mode .card {
+	  color: #e2e8f0; /* Light text color for better contrast on dark background */
+	}
+
+	body.dark-mode .publication-title a {
+	  color: #90cdf4 !important; /* Lighter blue for links in dark mode */
+	}
+
+	body.dark-mode .toggle-button {
+	  background-color: #68d391;
+	}
+
+	body.dark-mode .banner .name a {
+	  color: #68d391; /* Match the tab text color in dark mode */
+	}
+
+	body.dark-mode .education .years {
+	  color: #a0aec0; /* Lighter grey for years in dark mode */
+	}
+
+	body.dark-mode .education .description {
+	  color: #f6ad55; /* Adjusted color for description text in dark mode */
+	}
+
+	/* Add transition for smooth theme switching */
+	body, .card, .banner, aside, main, .publication-title a, .toggle-button {
+	  transition: background-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+	}
+</style>
 </head>
 <body>
   <div class="banner">
@@ -480,6 +742,9 @@
       <button class="tablinks" onclick="openTab(event, 'Research')">Research</button>
       <button class="tablinks" onclick="openTab(event, 'Publications')">Publications</button>
     </div>
+	<button id="theme-toggle" style="background: none; border: none; cursor: pointer; padding: 8px; margin-left: 10px; display: flex; align-items: center; justify-content: center;" title="Toggle light/dark mode">
+		<img alt="Toggle Theme" id="theme-icon" src="images/icon_moon.svg" style="width: 24px; height: 24px;"/>
+	</button>
   </div>
   <div class="container">
     <aside>
@@ -498,7 +763,7 @@
       </div>
       <div class="contact" style="padding: 20px; font-family: Arial, sans-serif;">
         <p>
-			<a href="mailto:vivek3461@gmail.com" style="text-decoration: none; color: #6abb78;">
+			<a href="mailto:vivek3461@gmail.com" style="text-decoration: none; color: var(--sidebar-highlight);">
 				vivek3461@gmail.com
             </a>
         </p>
@@ -627,19 +892,57 @@
         
       </section>
 
-      <section id="Research" class="tabcontent">
-        <div class="CardWithImage1">
+<section class="tabcontent" id="Research">
+<!-- <div class="CardWithImage1">
             <div class="CardWithImage1-title">Coordinated Guidance for a Multi-agent System</div>
             <div class="CardWithImage1-content">
                 <div class="CardWithImage1-image">
-                    <img src="images/ToBeUpdated.gif" alt="Sample Image">
+                    <img src="images/sample.gif" alt="Sample Image">
                 </div>
                 <div class="CardWithImage1-text">
-                    To be updated.
+                    To be updated
                 </div>
             </div>
-        </div>
-      </section>
+        </div> -->
+	<article class="CardWithImage1">
+		<figure class="CardWithImage1-image">
+			<img alt="Coordinated UAV Strategy Diagram" src="images/sample.gif"/>
+			<figcaption class="visually-hidden">Illustration of the multi-agent guidance strategy.</figcaption>
+		</figure>
+		<div class="CardWithImage1-content">
+			<h3 class="CardWithImage1-title">Coordinated Guidance for a Multi-agent System</h3>
+			<div class="CardWithImage1-text collapsible collapsed" id="text1">
+				<p>
+					To be updated
+				</p>
+				<p>
+					To be updated
+				</p>
+		</div>
+		<button aria-controls="text1" aria-expanded="false" class="toggle-button">Read More</button>
+		</div>
+	</article>
+	<div style="display: flex; flex-wrap: wrap; gap: 2%; justify-content: space-between;">
+		<article class="CardWithImageHalf">
+			<div class="CardWithImageHalf-image">
+				<img alt="Mini Project Thumbnail" src="images/sample.gif"/>
+			</div>
+			<h3 class="CardWithImageHalf-title">To be updated</h3>
+			<div class="CardWithImageHalf-text">
+				To be updated
+			</div>
+		</article>
+		<article class="CardWithImageHalf">
+			<div class="CardWithImageHalf-image">
+				<img alt="Mini Project Thumbnail" src="images/sample.gif"/>
+			</div>
+			<h3 class="CardWithImageHalf-title">To be updated</h3>
+			<div class="CardWithImageHalf-text">
+				To be updated
+			</div>
+		</article>
+	</div>
+</section>
 
       <section id="Publications" class="tabcontent">
         <!-- <div class="contribution-note">* indicates equal contribution.</div> -->
@@ -750,6 +1053,52 @@
         main.classList.add("main-full-width");
       }
     }
+	
+	document.querySelectorAll(".toggle-button").forEach(button => {
+		button.addEventListener("click", () => {
+		  const targetId = button.getAttribute("aria-controls");
+		  const content = document.getElementById(targetId);
+
+		  const isExpanded = button.getAttribute("aria-expanded") === "true";
+		  button.setAttribute("aria-expanded", String(!isExpanded));
+
+		  content.classList.toggle("expanded");
+		  content.classList.toggle("collapsed");
+		  button.textContent = isExpanded ? "Read More" : "Show Less";
+		});
+	  });
+	
+	const toggleButton = document.getElementById('theme-toggle');
+	const icon = document.getElementById('theme-icon');
+
+	// Fix paths by ensuring they're relative to the document root
+	const sunIconPath = window.location.pathname.includes('/') ? 
+	  'images/icon_sun.svg' : '/images/icon_sun.svg';
+	const moonIconPath = window.location.pathname.includes('/') ? 
+	  'images/icon_moon.svg' : '/images/icon_moon.svg';
+
+	function setTheme(theme) {
+	  document.body.classList.toggle('dark-mode', theme === 'dark');
+	  icon.src = theme === 'dark' ? sunIconPath : moonIconPath;
+	  localStorage.setItem('theme', theme);
+	}
+
+	toggleButton.addEventListener('click', () => {
+	  const newTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+	  setTheme(newTheme);
+	});
+
+	// Apply saved theme or use system preference
+	const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+	const savedTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
+	setTheme(savedTheme);
+
+	// Add listener for system theme changes
+	prefersDarkScheme.addEventListener('change', (e) => {
+	  if (!localStorage.getItem('theme')) {
+		setTheme(e.matches ? 'dark' : 'light');
+	  }
+	});
   </script>
 </body>
 </html>
