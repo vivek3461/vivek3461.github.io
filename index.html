@@ -11,6 +11,8 @@
       --color-black: #000000;
       --color-gray50: #777777;
       --color-background: #f9f9f9;
+	  --color-brown: #a52a2a;
+	  --color-golden-brown: #f6ad55;
       
       --color-accent-light: #d0ffd0;
       
@@ -92,6 +94,8 @@
 	  --banner-textcolor: var(--color-white);
 	  --body-bgcolor: var(--color-white);
 	  
+	  --color-emphasize: var(--color-brown);
+	  
 	  /* Newly added */
 	  --color-dark-bg: var(--sidebar-bgcolor);
 	  --color-primary-green: var(--tab-textcolor);
@@ -105,7 +109,7 @@
     }
     body {
       margin: 0;
-      font-family: Roboto, sans-serif;
+      font-family: Lato, sans-serif;
       background: var(--body-bgcolor);
       color: var(--main-textcolor);
       font-size: 1.1em; /* General font size increased */
@@ -527,7 +531,7 @@
     }
     /* Education-related */
     .education {
-      font-family: Arial, sans-serif;
+      font-family: Lato, sans-serif;
       color: var(--main-textcolor);
       padding: 20px;
     }
@@ -583,7 +587,7 @@
     }
     .education .description {
       margin-top: 5px;
-	  color: var(--color-golden-yellow);
+	  color: var(--color-brown);
 	  font-size: 16px;
     }
 
@@ -694,6 +698,7 @@
 	  --publication-journal-textcolor: #1a202c;
 	  --publication-button-bg: #4a5568;
 	  --publication-button-border: #2d3748;
+	  --color-emphasize: var(--color-golden-brown);
   
 	  /* Banner and layout */
 	  --banner-bgcolor: #2d3748;
@@ -757,7 +762,7 @@
         <h3>Current Research Focus</h3>
         <ul>
             <li>Motion-planning algorithms</li>
-            <li>Multi-agent formation</li>
+            <li>Multi-agent coordination</li>
 			<li>Optimization and Optimal Control</li>
         </ul>
       </div>
@@ -791,30 +796,28 @@
         <div class="section-title">About Me</div>
         <div class="card">
           <p>
-            I am currently a <strong>Research Associate</strong> in the 
-            <strong>Guidance, Navigation, and Control (GNC) Laboratory</strong> at the 
-            <strong>Indian Institute of Technology Madras</strong>. My current work focuses on the 
-            <em>coordinated net capture of an adversarial aerial target</em>, where I contribute to the development of 
-            <strong>coordinated guidance and control strategies</strong> for multiple UAVs to carry a net and approach the target.
+            I am currently a Research Associate in the 
+            <span style="color: var(--color-emphasize)"><em>Guidance, Navigation, and Control (GNC) Laboratory</em></span> at the Department of Aerospace Engineering, 
+            Indian Institute of Technology Madras. My current work focuses on the 
+            <em>coordinated net capture of an non-maneuvering aerial target</em>, where I contribute to the development of 
+            guidance strategies for <span style="color: var(--color-emphasize)"><em>coordinated movement of multiple UAVs</em></span> to carry a net and approach the target.
           </p>
           
           <p>
-            I completed my Ph.D. in the <strong>Department of Aerospace Engineering</strong> at 
-            <strong>IIT Madras</strong>. My doctoral research, titled 
-            <em>"Proportional Navigation-based Guidance Strategies Towards Containment of a Non-maneuvering Target in Planar Engagements"</em>, 
-            involved developing <em>time and angle-constrained guidance strategies</em> for containing targets, 
-            leveraging the <strong>Proportional Navigation (PN)</strong> guidance law.
+            I completed my Ph.D. in the <em>Department of Aerospace Engineering</em> at 
+            <em>IIT Madras</em>. My doctoral research was focused on developing <span style="color: var(--color-emphasize)"><em>time and angle-constrained guidance strategies for a multi-pursuer setup</em></span> to contain a non-maneuvering target, 
+            mainly leveraging the <em>Proportional Navigation (PN)</em> guidance law.
           </p>
           
           <p>
-            My research interests span <strong>guidance and control of autonomous vehicles</strong>, 
-            <strong>multi-agent coordination</strong>, and <strong>motion planning algorithms</strong>. 
+            My research interests span <em>guidance and control of autonomous vehicles</em>, 
+            <em>multi-agent coordination</em>, and <em>motion planning algorithms</em>. 
             As I explore motion planning for autonomous UAVs, I find great motivation in its overlaps with 
-            <strong>robotic applications</strong>, especially in areas like <em>robotic manipulation</em>.
+            <em>robotic applications</em>, especially in areas like <em>mobile robots</em> and <em>robotic manipulation</em>.
           </p>
           
           <p>
-            I am also deeply interested in <strong>optimal control of robotic systems</strong> and <em>integration of sensors' information that goes in to the guidance block</em>. 
+            I am also deeply interested in <span style="color: var(--color-emphasize)"><em>optimal control of robotic systems</em></span> and <span style="color: var(--color-emphasize)"><em>integration of sensors' information</em></span> that goes in to the guidance block. 
             Beyond engineering, I find joy in exploring <strong>mathematics</strong> for its own elegance and challenge, 
             often driven by curiosity more than necessity.
           </p>
@@ -837,7 +840,7 @@
 							<div class="years">2013 – 2015</div>
 						</div>
                         <div class="institute">National Institute of Technology Tiruchirappalli</div>
-                        <div class="description">Project: "<em>Development of the tip clearance measurement sensor for compressor stage of turbines</em>.</div>
+                        <div class="description">Project: "<em>Development of the tip clearance measurement sensor for compressor stage of turbines"</em>.</div>
                     </li>
                     <li>
 						<div class="degree-years">
